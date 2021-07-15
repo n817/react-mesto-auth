@@ -1,0 +1,21 @@
+.profile__content {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 25px;
+}
+
+@media screen and (max-width: 1023px) {
+  /* стили для экранов с разрешением менее 1024px по ширине */
+  .profile__content {
+    padding-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .profile__content {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+}

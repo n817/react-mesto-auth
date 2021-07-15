@@ -1,0 +1,61 @@
+/* Общие стили */
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/inter/inter.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/page/__section/page__section.css);
+
+/* Стили блока header */
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+
+/* Стили блока profile */
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__content/profile__content.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__avatar-edit-button/profile__avatar-edit-button.css);
+@import url(./blocks/profile/__avatar-edit-icon/profile__avatar-edit-icon.css);
+@import url(./blocks/profile/__title/profile__title.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__description/profile__description.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+
+/* Стили блока cards */
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__image-button/card__image-button.css);
+@import url(./blocks/card/__image/card__image.css);
+@import url(./blocks/card/__caption/card__caption.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__like-block/card__like-block.css);
+@import url(./blocks/card/__like-button/card__like-button.css);
+@import url(./blocks/card/__likes-counter/card__likes-counter.css);
+@import url(./blocks/card/__like-button/_active/card__like-button_active.css);
+@import url(./blocks/card/__trash-button/card__trash-button.css);
+@import url(./blocks/card/__trash-button/_active/card__trash-button_active.css);
+
+/* Стили блока footer */
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__content/footer__content.css);
+
+/* Стили блока popup */
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__close-button/popup__close-button.css);
+@import url(./blocks/popup/_type/popup_type_zoom.css);
+
+/* Стили блока form */
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__title/form__title.css);
+@import url(./blocks/form/__field/form__field.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__input/_type/form__input_type_error.css);
+@import url(./blocks/form/__input-error/form__input-error.css);
+@import url(./blocks/form/__input-error/_active/form__input-error_active.css);
+@import url(./blocks/form/__submit-button/form__submit-button.css);
+@import url(./blocks/form/__submit-button/_inactive/form__submit-button_inactive.css);
+
+/* Стили блока zoom */
+@import url(./blocks/zoom/zoom.css);
+@import url(./blocks/zoom/__image/zoom__image.css);
+@import url(./blocks/zoom/__caption/zoom__caption.css);

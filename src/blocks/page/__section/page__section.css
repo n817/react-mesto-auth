@@ -1,0 +1,11 @@
+.page__section {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1279px) {
+  /* стили для экранов с разрешением менее 1280px по ширине */
+  .page__section {
+    max-width: 88%;
+  }
+}

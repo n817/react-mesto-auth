@@ -1,0 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 18px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 1023px) {
+  /* выстраиваем изображения в 2 колонки для для экранов с разрешением менее 1024px по ширине */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 649px) {
+  /* выстраиваем изображения в 1 колонку для для экранов с разрешением менее 650px по ширине */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

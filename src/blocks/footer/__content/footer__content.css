@@ -1,0 +1,13 @@
+.footer__content {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .footer__content {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

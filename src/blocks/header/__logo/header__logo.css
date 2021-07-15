@@ -1,0 +1,11 @@
+.header__logo {
+  width: 142px;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .header__logo {
+    width: 104px;
+    padding-left: 27px;
+  }
+}

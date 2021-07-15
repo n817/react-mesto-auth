@@ -1,0 +1,12 @@
+.footer {
+  padding-top: 66px;
+  padding-bottom: 60px;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .footer {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
