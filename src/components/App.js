@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import ProtectedRoute from './ProtectedRoute'
 import Register from './Register';
 import Login from './Login';
 import Header from './Header';
@@ -174,7 +175,6 @@ function App() {
               cards = {cards}/>
           </Route>
         </Switch>
-
 
         <Footer />
 
