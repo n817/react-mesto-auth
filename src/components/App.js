@@ -16,7 +16,8 @@ import ImagePopup from './ImagePopup';
 
 
 function App() {
-
+  
+  const [loggedIn, setLoggedIn] = React.useState(true);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
@@ -156,7 +157,7 @@ function App() {
         <Header />
 
         <Switch>
-        <Route path="/sign-up">
+          <Route path="/sign-up">
             <Register />
           </Route>
 
@@ -164,16 +165,18 @@ function App() {
             <Login />
           </Route>
 
-          <Route path="/">
-            <Main
-              onEditAvatar = {handleEditAvatarClick}
-              onEditProfile = {handleEditProfileClick}
-              onAddPlace = {handleAddPlaceClick}
-              onCardClick = {handleCardClick}
-              onCardLike = {handleCardLike}
-              onCardDelete = {handleCardDelete}
-              cards = {cards}/>
-          </Route>
+          <ProtectedRoute
+            path="/"
+            loggedIn={loggedIn}
+            component={Main}
+            onEditAvatar = {handleEditAvatarClick}
+            onEditProfile = {handleEditProfileClick}
+            onAddPlace = {handleAddPlaceClick}
+            onCardClick = {handleCardClick}
+            onCardLike = {handleCardLike}
+            onCardDelete = {handleCardDelete}
+            cards = {cards}
+          />
         </Switch>
 
         <Footer />
