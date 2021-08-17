@@ -1,7 +1,11 @@
+import IdentityForm from "./IdentityForm";
+
 function Login() {
-  const pStyle = {color: 'white', textAlign: 'center'}
   return(
-    <p style={pStyle}>Войдите</p>
+    <IdentityForm 
+      title="Вход"
+      buttonText="Войти"
+    />
   );
 }
 

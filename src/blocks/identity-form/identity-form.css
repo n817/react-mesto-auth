@@ -1,0 +1,13 @@
+.identity-form {
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .identity-form {
+    padding: 25px 22px;
+  }
+}

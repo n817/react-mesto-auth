@@ -1,7 +1,12 @@
+import IdentityForm from "./IdentityForm";
+
 function Register() {
   const pStyle = {color: 'white', textAlign: 'center'}
   return(
-    <p style={pStyle}>Зарегистрируйтесь</p>
+    <IdentityForm 
+      title="Регистрация"
+      buttonText="Зарегистрироваться"
+    />
   );
 }
 

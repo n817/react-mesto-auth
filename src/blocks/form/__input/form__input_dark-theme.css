@@ -1,0 +1,12 @@
+.form__input_dark-theme {
+  width: 320px;
+  background-color: black;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .form__input_dark-theme {
+    width: 238px;
+  }
+}
