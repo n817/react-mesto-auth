@@ -13,6 +13,7 @@ import Footer from './Footer';
 import api from '../utils/api'
 import '../index.css';
 import ImagePopup from './ImagePopup';
+import InfoTooltip from './InfoTooltip';
 
 
 function App() {
@@ -199,6 +200,12 @@ function App() {
         <ImagePopup
           card={selectedCard}
           onClose={closeAllPopups}/>
+
+        <InfoTooltip 
+          isOpen={true}
+          regStatusError={true}
+          onClose={closeAllPopups}
+        />
 
       </CurrentUserContext.Provider>
     </div>
