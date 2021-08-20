@@ -1,13 +1,11 @@
-.identity-form {
-  text-align: center;
-  color: white;
-  padding-top: 50px;
-  margin: 0 auto;
+.form__input_dark-theme {
+  background-color: black;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 @media screen and (max-width: 649px) {
   /* стили для экранов с разрешением менее 650px по ширине */
-  .identity-form {
-    padding: 25px 22px;
+  .form__input_dark-theme {
+    width: 238px;
   }
 }

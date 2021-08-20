@@ -202,7 +202,7 @@ function App() {
           onClose={closeAllPopups}/>
 
         <InfoTooltip 
-          isOpen={true}
+          isOpen={false}
           regStatusError={true}
           onClose={closeAllPopups}
         />

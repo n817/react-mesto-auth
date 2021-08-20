@@ -1,0 +1,12 @@
+.form__submit-button_dark-theme {
+  background-color: #FFF;
+  color: #000;
+  margin-top: 168px;
+}
+
+@media screen and (max-width: 649px) {
+  /* стили для экранов с разрешением менее 650px по ширине */
+  .form__submit-button_dark-theme {
+    margin-top: 125px;
+  }
+}

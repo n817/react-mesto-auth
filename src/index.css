@@ -42,22 +42,21 @@
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
 @import url(./blocks/popup/__close-button/popup__close-button.css);
+@import url(./blocks/popup/__info-image/popup__info-image.css);
 @import url(./blocks/popup/_type/popup_type_zoom.css);
 
 /* Стили блока form */
 @import url(./blocks/form/form.css);
+@import url(./blocks/form/_type/form_type_identity.css);
+@import url(./blocks/form/_type/form_type_info.css);
 @import url(./blocks/form/__title/form__title.css);
 @import url(./blocks/form/__field/form__field.css);
 @import url(./blocks/form/__input/form__input.css);
-@import url(./blocks/form/__input/form__input_dark-theme.css);
+@import url(./blocks/form/__input/_dark-theme/form__input_dark-theme.css);
 @import url(./blocks/form/__submit-button/form__submit-button.css);
-@import url(./blocks/form/__submit-button/form__submit-button__dark-theme.css);
+@import url(./blocks/form/__submit-button/_dark-theme/form__submit-button_dark-theme.css);
 
 /* Стили блока zoom */
 @import url(./blocks/zoom/zoom.css);
 @import url(./blocks/zoom/__image/zoom__image.css);
 @import url(./blocks/zoom/__caption/zoom__caption.css);
-
-
-/* Стили блока identity-form */
-@import url(./blocks/identity-form/identity-form.css);

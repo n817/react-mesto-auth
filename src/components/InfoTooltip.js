@@ -13,11 +13,11 @@ function InfoTooltip({isOpen, regStatusError, onClose}) {
   
   return(
     <section className={`popup ${isOpen ? "popup_opened" : ""}`} aria-label="Сообщение о результате регистрации">
-    <figure className="">
-      <button type="button" className="popup__close-button" aria-label="Закрыть попап" onClick={onClose}></button>
-      <img src={InfoTooltipIcon} alt={InfoTooltipTitle} className=""/>
-      <figcaption className="form__title">{InfoTooltipTitle}</figcaption>
-    </figure>
+      <figure className="form form_type_info">
+        <button type="button" className="popup__close-button" aria-label="Закрыть попап" onClick={onClose}></button>
+        <img src={InfoTooltipIcon} alt={InfoTooltipTitle} className="popup__info-image"/>
+        <figcaption className="form__title">{InfoTooltipTitle}</figcaption>
+      </figure>
     </section>
   );
 }

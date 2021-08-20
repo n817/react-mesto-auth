@@ -1,7 +1,7 @@
 function IdentityForm({title, buttonText}) {
   return(
     <section className="page__section">
-    <form className="identity-form">
+    <form className="form form_type_identity">
       <h2 className="form__title">{title}</h2>
       <label className="form__field">
         <input
@@ -30,7 +30,7 @@ function IdentityForm({title, buttonText}) {
           required
         />
       </label>
-      <button type="submit" className="form__submit-button form__submit-button__dark-theme">{buttonText}</button>
+      <button type="submit" className="form__submit-button form__submit-button_dark-theme">{buttonText}</button>
     </form>
     </section>
   );
