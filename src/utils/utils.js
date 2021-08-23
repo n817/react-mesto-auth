@@ -7,4 +7,8 @@ const apiSettings = {
   }
 };
 
-export {apiSettings};
+const authSettings = {
+  baseUrl: 'https://auth.nomoreparties.co' 
+};
+
+export {apiSettings, authSettings};

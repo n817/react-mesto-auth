@@ -1,20 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+
+import '../index.css';
+import api from '../utils/api';
+import auth from '../utils/auth';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import ProtectedRoute from './ProtectedRoute'
+import ProtectedRoute from './ProtectedRoute';
 import Register from './Register';
 import Login from './Login';
 import Header from './Header';
 import Main from './Main';
+import ImagePopup from './ImagePopup';
+import InfoTooltip from './InfoTooltip';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import Footer from './Footer';
-import api from '../utils/api'
-import '../index.css';
-import ImagePopup from './ImagePopup';
-import InfoTooltip from './InfoTooltip';
-
 
 function App() {
   
@@ -25,6 +26,26 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
+
+  function handleSignUp() {
+    auth.signUp()
+      .then((res) => {
+        if (res.data) {
+          console.log(res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function handleSignIn() {
+    auth.signIn()
+      .then((res) => {
+        if (res.data) {
+          console.log(res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 
   function handleEditAvatarClick(){
     setIsEditAvatarPopupOpen(true);
@@ -159,11 +180,15 @@ function App() {
 
         <Switch>
           <Route path="/sign-up">
-            <Register />
+            <Register 
+              onRegister={handleSignUp}
+            />
           </Route>
 
           <Route path="/sign-in">
-            <Login />
+            <Login 
+              onLogin={handleSignIn}
+            />
           </Route>
 
           <ProtectedRoute

@@ -1,10 +1,11 @@
 import IdentityForm from "./IdentityForm";
 
-function Login() {
+function Login({onLogin}) {
   return(
     <IdentityForm 
       title="Вход"
       buttonText="Войти"
+      onSubmit={onLogin}
     />
   );
 }

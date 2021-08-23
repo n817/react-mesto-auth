@@ -8,6 +8,14 @@ class Api {
     this._authorization = headers.authorization;
   }
 
+  // Проверка ответа сервера
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+
   // Получение информации о пользователе с сервера
   getUserInfo() {
     return fetch(this._userUrl, {
@@ -78,13 +86,6 @@ class Api {
       headers: this._headers
     })
     .then(this._checkResponse)
-  }
-
-  _checkResponse(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Ошибка: ${res.status}`);
   }
 
 }

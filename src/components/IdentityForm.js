@@ -1,4 +1,4 @@
-function IdentityForm({title, buttonText}) {
+function IdentityForm({ title, buttonText, onSubmit }) {
   return(
     <section className="page__section">
     <form className="form form_type_identity">
