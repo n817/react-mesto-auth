@@ -1,13 +1,28 @@
-function IdentityForm({ title, buttonText, onSubmit }) {
+import { useState } from "react";
+
+function IdentityForm({ title, buttonText, onFormSubmit }) {
+
+  const [emailInput, setEmailInput] = useState({});
+  const [passwordInput, setPasswordInput] = useState({});
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onFormSubmit({ emailInput, passwordInput });
+  }
+
+
   return(
     <section className="page__section">
-    <form className="form form_type_identity">
+    <form 
+      className="form form_type_identity" 
+      onSubmit={handleSubmit}
+    >
       <h2 className="form__title">{title}</h2>
       <label className="form__field">
         <input
           type="email"
-          //value={}
-          //onChange={}
+          value={emailInput}
+          //onChange={handleEmailInput}
           className="form__input form__input_dark-theme"
           name="email"
           placeholder="Email"
@@ -20,8 +35,8 @@ function IdentityForm({ title, buttonText, onSubmit }) {
       <label className="form__field">
         <input
           type="password"
-          //value={}
-          //onChange={}
+          value={passwordInput}
+          //onChange={handlePasswordInput}
           className="form__input form__input_dark-theme"
           name="password"
           placeholder="Пароль"

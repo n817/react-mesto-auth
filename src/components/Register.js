@@ -5,7 +5,7 @@ function Register(onRegister) {
     <IdentityForm 
       title="Регистрация"
       buttonText="Зарегистрироваться"
-      onSubmit={onRegister}
+      onFormSubmit={onRegister}
     />
   );
 }

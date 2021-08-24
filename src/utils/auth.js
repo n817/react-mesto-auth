@@ -14,7 +14,7 @@ class Auth {
   }
 
   // Регистрация
-  signUp(email, password) {
+  signUp({ email, password }) {
     return fetch(
       `${this.baseUrl}/signup`, 
       {
@@ -27,7 +27,7 @@ class Auth {
   }
 
   // Авторизация
-  signIn(email, password) {
+  signIn({ email, password }) {
     return fetch(
       `${this.baseUrl}/signin`, 
       {

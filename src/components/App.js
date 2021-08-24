@@ -27,8 +27,8 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
 
-  function handleSignUp() {
-    auth.signUp()
+  function handleSignUp({ email, password }) {
+    auth.signUp({ email, password })
       .then((res) => {
         if (res.data) {
           console.log(res.data);
@@ -37,8 +37,8 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  function handleSignIn() {
-    auth.signIn()
+  function handleSignIn({ email, password }) {
+    auth.signIn({ email, password })
       .then((res) => {
         if (res.data) {
           console.log(res.data);

@@ -5,7 +5,7 @@ function Login({onLogin}) {
     <IdentityForm 
       title="Вход"
       buttonText="Войти"
-      onSubmit={onLogin}
+      onFormSubmit={onLogin}
     />
   );
 }
