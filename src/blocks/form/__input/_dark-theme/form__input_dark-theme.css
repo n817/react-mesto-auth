@@ -1,6 +1,7 @@
 .form__input_dark-theme {
   background-color: black;
   border-bottom: 2px solid #CCCCCC;
+  color: #ccc;
 }
 
 @media screen and (max-width: 649px) {

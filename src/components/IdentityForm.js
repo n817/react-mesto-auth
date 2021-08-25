@@ -5,10 +5,19 @@ function IdentityForm({ title, buttonText, onFormSubmit }) {
   const [emailInput, setEmailInput] = useState({});
   const [passwordInput, setPasswordInput] = useState({});
 
+  function handleEmailInput(evt) {
+    setEmailInput(evt.target.value);
+  };
+
+  function handlePasswordInput(evt) {
+    setPasswordInput(evt.target.value);
+  };
+
+
   function handleSubmit(evt) {
     evt.preventDefault();
     onFormSubmit({ emailInput, passwordInput });
-  }
+  };
 
 
   return(
@@ -21,8 +30,8 @@ function IdentityForm({ title, buttonText, onFormSubmit }) {
       <label className="form__field">
         <input
           type="email"
-          value={emailInput}
-          //onChange={handleEmailInput}
+          value={emailInput || ''}
+          onChange={handleEmailInput}
           className="form__input form__input_dark-theme"
           name="email"
           placeholder="Email"
@@ -35,8 +44,8 @@ function IdentityForm({ title, buttonText, onFormSubmit }) {
       <label className="form__field">
         <input
           type="password"
-          value={passwordInput}
-          //onChange={handlePasswordInput}
+          value={passwordInput || ''}
+          onChange={handlePasswordInput}
           className="form__input form__input_dark-theme"
           name="password"
           placeholder="Пароль"
