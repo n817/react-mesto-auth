@@ -15,12 +15,11 @@ class Auth {
 
   // Регистрация
   signUp({ email, password }) {
-    return fetch(
-      `${this.baseUrl}/signup`, 
+    return fetch(`${this.baseUrl}/signup`,
       {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({password, email})
+        body: JSON.stringify({ password, email })
       }
     )
     .then(this._checkResponse);

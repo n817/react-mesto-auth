@@ -1,6 +1,6 @@
 import IdentityForm from "./IdentityForm";
 
-function Login({onLogin}) {
+function Login({ onLogin }) {
   return(
     <IdentityForm 
       title="Вход"

@@ -31,7 +31,7 @@ function App() {
     auth.signUp({ email, password })
       .then((res) => {
         if (res.data) {
-          console.log(res.data);
+          console.log(res);
         }
       })
       .catch((err) => console.log(err));
@@ -40,8 +40,9 @@ function App() {
   function handleSignIn({ email, password }) {
     auth.signIn({ email, password })
       .then((res) => {
+        console.log(res);
         if (res.data) {
-          console.log(res.data);
+          console.log(res);
         }
       })
       .catch((err) => console.log(err));

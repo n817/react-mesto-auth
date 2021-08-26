@@ -2,8 +2,8 @@ import { useState } from "react";
 
 function IdentityForm({ title, buttonText, onFormSubmit }) {
 
-  const [emailInput, setEmailInput] = useState({});
-  const [passwordInput, setPasswordInput] = useState({});
+  const [emailInput, setEmailInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
 
   function handleEmailInput(evt) {
     setEmailInput(evt.target.value);
@@ -16,7 +16,7 @@ function IdentityForm({ title, buttonText, onFormSubmit }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onFormSubmit({ emailInput, passwordInput });
+    onFormSubmit({ email: emailInput, password: passwordInput });
   };
 
 

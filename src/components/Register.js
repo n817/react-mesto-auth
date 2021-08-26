@@ -1,6 +1,6 @@
 import IdentityForm from "./IdentityForm";
 
-function Register(onRegister) {
+function Register({ onRegister }) {
   return(
     <IdentityForm 
       title="Регистрация"
