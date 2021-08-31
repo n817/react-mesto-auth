@@ -1,0 +1,5 @@
+.header__auth-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

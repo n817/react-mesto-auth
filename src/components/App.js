@@ -177,7 +177,9 @@ function App() {
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-        <Header />
+        <Header 
+          loggedIn={loggedIn}
+        />
 
         <Switch>
           <Route path="/sign-up">

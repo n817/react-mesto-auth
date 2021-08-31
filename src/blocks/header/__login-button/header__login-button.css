@@ -1,0 +1,20 @@
+.header__login-button {
+  font-size: 18px;
+  line-height: 22px;
+  color: #A9A9A9;
+  background: none;
+  border: none;
+}
+
+.header__login-button:hover {
+  cursor: pointer;
+}
+
+/* стили для экранов с разрешением менее 650px по ширине */
+@media screen and (max-width: 649px) {
+  .header__login-button {
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFF;
+  }   
+}
