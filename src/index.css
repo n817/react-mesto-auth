@@ -9,6 +9,7 @@
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__auth-section/header__auth-section.css);
 @import url(./blocks/header/__user-email/header__user-email.css);
+@import url(./blocks/header/__user-email/_visible/header__user-email_visible.css);
 @import url(./blocks/header/__login-button/header__login-button.css);
 
 /* Стили блока profile */

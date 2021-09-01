@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 import '../index.css';
 import api from '../utils/api';
@@ -19,30 +20,34 @@ import Footer from './Footer';
 
 function App() {
   
-  const [loggedIn, setLoggedIn] = React.useState(true);
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState({});
-  const [currentUser, setCurrentUser] = React.useState({});
-  const [cards, setCards] = React.useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
+  const [cards, setCards] = useState([]);
+  const history = useHistory();
 
   function handleSignUp({ email, password }) {
     auth.signUp({ email, password })
       .then((res) => {
         if (res.data) {
           console.log(res);
+          setLoggedIn(true);
         }
       })
       .catch((err) => console.log(err));
   }
 
   function handleSignIn({ email, password }) {
-    auth.signIn({ email, password })
+    auth.signIn({ email, password }) // user@test.com, 123456
       .then((res) => {
-        console.log(res);
-        if (res.data) {
-          console.log(res);
+        if (res) {
+          setLoggedIn(true);
+          setEmail(email);
+          history.push('/');
         }
       })
       .catch((err) => console.log(err));
@@ -72,7 +77,7 @@ function App() {
   }
 
   // Загружаем данные пользователя с сервера
-  React.useEffect(() => {
+  useEffect(() => {
     api.getUserInfo()
     .then((res) => {
       setCurrentUser(res);
@@ -84,7 +89,7 @@ function App() {
   }, []);
 
   // Загружаем карточки с сервера
-  React.useEffect(() => {
+  useEffect(() => {
     api.getCardList()
     .then((res) => {
       setCards(res);
@@ -157,7 +162,7 @@ function App() {
 
 
   // Реализуем закрытие popup кнопкой Esc
-  React.useEffect(() => {
+  useEffect(() => {
 
     function handleEscClose(evt) {
       if (evt.key ==='Escape') {
@@ -179,6 +184,7 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Header 
           loggedIn={loggedIn}
+          email={email}
         />
 
         <Switch>
