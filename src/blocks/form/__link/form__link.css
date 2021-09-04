@@ -1,0 +1,10 @@
+.form__link {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  left: 0;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}

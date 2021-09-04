@@ -25,6 +25,8 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
+  const [regStatusError, setRegStatusError] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
@@ -34,11 +36,16 @@ function App() {
     auth.signUp({ email, password })
       .then((res) => {
         if (res.data) {
-          console.log(res);
-          setLoggedIn(true);
+          setRegStatusError(false);
+          setIsInfoTooltipOpen(true);
+          history.push('/sign-in');
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setRegStatusError(err);
+        setIsInfoTooltipOpen(true);
+        console.log(err);
+      })
   }
 
   function handleSignIn({ email, password }) {
@@ -47,10 +54,17 @@ function App() {
         if (res) {
           setLoggedIn(true);
           setEmail(email);
+          localStorage.setItem('token', res.token);
           history.push('/');
         }
       })
       .catch((err) => console.log(err));
+  }
+
+  function handleSignOut() {
+    setLoggedIn(false);
+    setEmail('');
+    // удалить токен!
   }
 
   function handleEditAvatarClick(){
@@ -73,6 +87,7 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
+    setIsInfoTooltipOpen(false);
     setSelectedCard({});
   }
 
@@ -185,6 +200,7 @@ function App() {
         <Header 
           loggedIn={loggedIn}
           email={email}
+          onSignOut={handleSignOut}
         />
 
         <Switch>
@@ -236,8 +252,8 @@ function App() {
           onClose={closeAllPopups}/>
 
         <InfoTooltip 
-          isOpen={false}
-          regStatusError={true}
+          isOpen={isInfoTooltipOpen}
+          regStatusError={regStatusError}
           onClose={closeAllPopups}
         />
 

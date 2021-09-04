@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function IdentityForm({ title, buttonText, onFormSubmit }) {
+function IdentityForm({ title, buttonText, onFormSubmit, children }) {
 
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -55,6 +55,7 @@ function IdentityForm({ title, buttonText, onFormSubmit }) {
         />
       </label>
       <button type="submit" className="form__submit-button form__submit-button_dark-theme">{buttonText}</button>
+      <div className="form__link-container">{children}</div>
     </form>
     </section>
   );
