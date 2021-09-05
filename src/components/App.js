@@ -32,6 +32,23 @@ function App() {
   const [cards, setCards] = useState([]);
   const history = useHistory();
 
+
+  // Если в локальном хранилище есть токен, то проверяем его валидность на сервере и авторизуем пользователя
+  useEffect(() => {
+    const currentToken = localStorage.getItem('token');
+    if (currentToken) {
+      auth.tokenCheck(currentToken)
+      .then((res) => {
+        setEmail(res.data.email);
+        setLoggedIn(true);
+        history.push('/');
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
+  })
+
   function handleSignUp({ email, password }) {
     auth.signUp({ email, password })
       .then((res) => {
@@ -64,7 +81,8 @@ function App() {
   function handleSignOut() {
     setLoggedIn(false);
     setEmail('');
-    // удалить токен!
+    localStorage.removeItem('token');
+    console.log(localStorage.getItem('token'));
   }
 
   function handleEditAvatarClick(){

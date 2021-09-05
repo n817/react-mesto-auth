@@ -41,7 +41,7 @@ class Auth {
   // Проверка токена
   tokenCheck(token) {
     return fetch(
-      `${this.baseUrl}//users/me`, 
+      `${this.baseUrl}/users/me`, 
       {
         method: 'GET',
         headers: { 
