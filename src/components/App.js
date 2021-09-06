@@ -45,9 +45,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
     }
-  })
+  }, [history]);
 
   function handleSignUp({ email, password }) {
     auth.signUp({ email, password })
@@ -75,7 +75,11 @@ function App() {
           history.push('/');
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setRegStatusError(err);
+        setIsInfoTooltipOpen(true);
+        console.log(err);
+      })
   }
 
   function handleSignOut() {

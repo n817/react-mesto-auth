@@ -7,3 +7,11 @@
   padding-right: 24px;
   margin: 0;
 }
+
+/* стили для экранов с разрешением менее 650px по ширине */
+@media screen and (max-width: 649px) {
+  .header__user-email {
+    font-size: 14px;
+    line-height: 17px;
+  }   
+}

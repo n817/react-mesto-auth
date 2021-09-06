@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   border-bottom: solid 1px #545454;
   padding-top: 45px;
   padding-bottom: 41px;
@@ -10,7 +11,6 @@
   /* стили для экранов с разрешением менее 650px по ширине */
   .header {
     max-width: 100%;
-    padding-top: 28px;
-    padding-bottom: 32px;
+    padding: 30px;
   }
 }
